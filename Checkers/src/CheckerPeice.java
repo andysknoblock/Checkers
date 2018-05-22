@@ -25,7 +25,16 @@ public class CheckerPeice implements Peice
 		Point p[] = new Point[2];
 		p[0] = new Point(row-1, col+dir);
 		p[1] = new Point(row+1, col+dir);
-		return null;
+		return p;
+	}
+	public Point[] possibleJumps()
+	{
+		{
+			Point p[] = new Point[2];
+			p[0] = new Point(row-2, col+2*dir);
+			p[1] = new Point(row+2, col+2*dir);
+			return p;
+		}
 	}
 	public int getRow() {
 		return row;
@@ -38,6 +47,23 @@ public class CheckerPeice implements Peice
 	}
 	public void setCol(int col) {
 		this.col = col;
+	}
+	public void move(int row, int col)
+	{
+		this.row=row;
+		this.col=col;
+	}
+	public int getDir() 
+	{
+		return dir;
+	}
+	@Override
+	public boolean isKing() {
+		return false;
+	}
+	@Override
+	public Color getColor() {
+		return c;
 	}
 
 }

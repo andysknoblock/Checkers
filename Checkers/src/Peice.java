@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Point;
 //this interface allows multiple peices of different type to be stored in the same array
@@ -7,6 +8,11 @@ public interface Peice
 {
 	public void draw(Graphics2D g2, int x, int y, int width);
 	public Point[] possibleMoves();
+	public Point[] possibleJumps();
 	public int getRow();
 	public int getCol();
+	public void move(int row, int col);
+	public int getDir();
+	public boolean isKing();
+	public Color getColor();
 }
